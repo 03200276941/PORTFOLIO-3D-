@@ -1,0 +1,660 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #232526, #414345);
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(145deg, #2c2f33, #3e4349);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 12px;
+            margin: 20px;
+            position: relative;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar h1 span {
+            color: #4caf50;
+        }
+
+        .navbar div {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(145deg, #3e4349, #2c2f33);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .navbar a:hover {
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #4caf50, #3e4349);
+        }
+
+        .navbar a:active {
+            transform: translateY(2px);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ddd;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 20px;
+            background: linear-gradient(145deg, #2c2f33, #3e4349);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(145deg, #3e4349, #2c2f33);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .menu a:hover {
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #4caf50, #3e4349);
+        }
+
+        .section1, .section2 {
+            margin-top: 65px;
+            width: 100%;
+            display: flex;
+            height: 87vh;
+            padding: 0 45px;
+        }
+
+        .section1 img, .section2 img {
+            width: 30%;
+            height: 600px;
+        }
+
+        .section1part1, .section1part2 {
+            width: 60%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section1part1 h4, .section1part2 h4 {
+            font-size: 30px;
+            margin-top: 150px;
+        }
+
+        .section1part1 h1, .section1part2 h1 {
+            font-size: 60px;
+        }
+
+        .section1part1 h3, .section1part2 h3 {
+            font-size: 30px;
+        }
+
+        .section1part1 p, .section1part2 p {
+            font-size: 17px;
+            margin-top: 20px;
+        }
+
+        .section1part1 button, .section1part2 button {
+            margin-top: 20px;
+            color: #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(145deg, #3e4349, #2c2f33);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .section1part1 button:hover, .section1part2 button:hover {
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #4caf50, #3e4349);
+        }
+
+        .service {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .service .heading {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .service .heading span {
+            color: #4caf50;
+        }
+
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service-box {
+            background: linear-gradient(145deg, #2c2f33, #3e4349);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .service-box i {
+            font-size: 48px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .service-box .btn {
+            text-decoration: none;
+            color: #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(145deg, #3e4349, #2c2f33);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .service-box .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #4caf50, #3e4349);
+        }
+
+        .contact, .portfolio {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact .heading, .portfolio .heading {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact .heading span, .portfolio .heading span {
+            color: #4caf50;
+        }
+
+        .contact-container, .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-box, .portfolio-box {
+            background: linear-gradient(145deg, #2c2f33, #3e4349);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .contact-box i, .portfolio-box i {
+            font-size: 48px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .contact-box h3, .portfolio-box h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p, .portfolio-box p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-box .btn, .portfolio-box .btn {
+            text-decoration: none;
+            color: #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(145deg, #3e4349, #2c2f33);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .contact-box .btn:hover, .portfolio-box .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #4caf50, #3e4349);
+        }
+        #portfolio{
+            margin-top: 30px;
+        }
+        #service2{
+            margin-top: 30px;
+        }
+        .Contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .Contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .Contact h2 span {
+            color: #4caf50;
+        }
+
+        .Contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #2c2f33;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .Contact .input-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .Contact .input-box input {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #414345;
+            color: white;
+            font-size: 16px;
+        }
+
+        .Contact textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #414345;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .Contact .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #4caf50;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .Contact .btn:hover {
+            background: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .navbar div {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                display: flex;
+            }
+
+            .section1, .section2 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .section1 img {
+                margin-top: 6px;
+                width: 80%;
+                height: auto;
+            }
+            .section2 img{
+                display: none;
+
+                
+            }
+
+            .section1part1, .section1part2 {
+                width: 100%;
+                margin: 0;
+            }
+            .Abouth2{
+                margin-top: 350px;
+            }
+            .Contact .input-box {
+                flex-direction: column;
+            }
+
+            .Contact .input-box input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Bakhtawar<span>Khan</span></h1>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Services</a>
+        </div>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </nav>
+    <div class="section1">
+        <div class="section1part1">
+            <h4>Hi, Myself</h4>
+            <h1>Muhammad Bakhtawar</h1>
+            <h3>I'm a <span>Backend Developer</span></h3>
+            <p>I specialize in creating robust backend systems that are both scalable and efficient. With a strong foundation in programming, I thrive on solving complex problems and optimizing workflows to deliver seamless user experiences.</p>
+            <button>Download CV</button>
+        </div>
+        <img src="file:///C:/Users/SCS/Desktop/border%20image/portfolio/MUHAMMAD%20BAKHTAWAR%20KHAN.png" alt="Portrait of Muhammad Bakhtawar, a backend developer, smiling and wearing a professional outfit.">
+    </div>
+    <div class="section2">
+        <img src="file:///C:/Users/SCS/Desktop/border%20image/portfolio/MUHAMMAD%20BAKHTAWAR%20KHAN.png" alt="Portrait of Muhammad Bakhtawar, a backend developer, smiling and wearing a professional outfit.">
+        <div class="section1part2">
+            <h1 class="Abouth2">About Me</h1>
+            <h3>I'm a <span>Backend Developer</span></h3>
+            <p>I specialize in creating robust backend systems that are both scalable and efficient. With a strong foundation in programming, I thrive on solving complex problems and optimizing workflows to deliver seamless user experiences.</p>
+            <button>Read More</button>
+        </div>
+    </div>
+    <section class="service" id="service">
+        <h2 class="heading">
+            Our
+            <span>
+                Services
+            </span>
+        </h2>
+        <div class="service-container">
+            <div class="service-box">
+                <i class="bx bx-code-alt">
+                </i>
+                <h3>
+                    Web Development
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
+                    officiis ipsa fugiat voluptates distinctio.
+                </p>
+                <a class="btn" href="">
+                    Read More
+                </a>
+            </div>
+            <div class="service-box">
+                <i class="bx bxs-paint">
+                </i>
+                <h3>
+                    Graphic Design
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
+                    officiis ipsa fugiat voluptates distinctio.
+                </p>
+                <a class="btn" href="">
+                    Read More
+                </a>
+            </div>
+            <div class="service-box">
+                <i class="bx bx-bar-chart-alt">
+                </i>
+                <h3>
+                    Digital Marketing
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
+                    officiis ipsa fugiat voluptates distinctio.
+                </p>
+                <a class="btn" href="">
+                    Read More
+                </a>
+            </div>
+           
+        </div>
+        
+    <div class="service-container" id="service2">
+
+        <div class="service-box">
+            <i class="bx bx-mobile-alt">
+            </i>
+            <h3>
+                App Development
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
+                officiis ipsa fugiat voluptates distinctio.
+            </p>
+            <a class="btn" href="">
+                Read More
+            </a>
+        </div>
+        <div class="service-box">
+            <i class="bx bx-camera">
+            </i>
+            <h3>
+                Photography
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
+                officiis ipsa fugiat voluptates distinctio.
+            </p>
+            <a class="btn" href="">
+                Read More
+            </a>
+        </div>
+        <div class="service-box">
+            <i class="bx bx-brush">
+            </i>
+            <h3>
+                Illustration
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
+                officiis ipsa fugiat voluptates distinctio.
+            </p>
+            <a class="btn" href="">
+                Read More
+            </a>
+        </div>
+    </div>
+
+    </section>
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">
+            My
+            <span>
+                Portfolio
+            </span>
+        </h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img alt="Screenshot of a web development project showcasing a modern, responsive website design."
+                    height="200"
+                    src="https://storage.googleapis.com/a1aa/image/f086AqzfzlmNnEfQfeCKJzjp9BqamhPjFUttb3ADwmhlYESfE.jpg"
+                    width="300" />
+                <h3>
+                    Web Development Project
+                </h3>
+                <p>
+                    This project involved building a responsive website for a local business. The goal was to create a clean and modern design, ensuring a seamless user experience across all devices.
+                </p>
+                <a class="btn" href="https://example.com/project1">
+                    Read More
+                </a>
+            </div>
+    
+            <div class="portfolio-box">
+                <img alt="Graphic design project featuring a vibrant and creative poster design." height="200"
+                    src="https://storage.googleapis.com/a1aa/image/MGqNCwl3GJJsJBcMuq0u4jKtZD4AR4DeBnfHLlN4f9pNGh0nA.jpg"
+                    width="300" />
+                <h3>
+                    Graphic Design Poster
+                </h3>
+                <p>
+                    A vibrant and creative poster designed for an upcoming event. The poster reflects the theme and aesthetics of the event, ensuring it grabs attention and conveys the necessary information.
+                </p>
+                <a class="btn" href="https://example.com/project2">
+                    Read More
+                </a>
+            </div>
+    
+            <div class="portfolio-box">
+                <img alt="Digital marketing campaign results displayed in a detailed analytics dashboard." height="200"
+                    src="https://storage.googleapis.com/a1aa/image/viP08f9Cp1TcOay8m0fNAe42afxgPaXeblSNcPVq4fKYxIkeJA.jpg"
+                    width="300" />
+                <h3>
+                    Digital Marketing Campaign
+                </h3>
+                <p>
+                    A detailed analytics dashboard showing the results of a digital marketing campaign. The campaign targeted key demographics to increase sales and brand awareness, and the dashboard presents key performance metrics.
+                </p>
+                <a class="btn" href="https://example.com/project3">
+                    Read More
+                </a>
+            </div>
+    
+        </div>
+        <div class="portfolio-container" id="portfolio">
+            <div class="portfolio-box">
+                <img alt="Mobile app development for a fitness tracking application." height="200"
+                    src="https://i.pinimg.com/736x/c4/da/7d/c4da7d4a9a4155d52232053beabf753c.jpg"
+                    width="300" />
+                <h3>
+                    Fitness Tracking App
+                </h3>
+                <p>
+                    A mobile app designed to help users track their fitness goals. The app includes features like step counting, workout logs, and health data tracking, all aimed at improving user engagement and health outcomes.
+                </p>
+                <a class="btn" href="https://example.com/project4">
+                    Read More
+                </a>
+            </div>
+            
+            <div class="portfolio-box">
+                <img alt="E-commerce website development showcasing an online store interface." height="200"
+                    src="https://avatars.mds.yandex.net/i?id=f135c545d7fd6718d55451622e92024f3fd5b8a6-10752987-images-thumbs&n=13"
+                    width="300" />
+                <h3>
+                    E-Commerce Website
+                </h3>
+                <p>
+                    Development of an e-commerce platform designed to offer a smooth shopping experience. The platform features an intuitive interface, product filters, and a secure payment gateway for online transactions.
+                </p>
+                <a class="btn" href="https://example.com/project5">
+                    Read More
+                </a>
+            </div>
+            
+            <div class="portfolio-box">
+                <img alt="SEO optimization project for a website's search engine rankings." height="200"
+                    src="https://avatars.mds.yandex.net/get-altay/1778671/2a00000169ddc0ed0b18dafd7ef49e95c717/XXL_height"
+                    width="300" />
+                <h3>
+                    SEO Optimization
+                </h3>
+                <p>
+                    A project focused on improving the search engine rankings of a website. This included optimizing website content, improving page load times, and implementing backlink strategies to enhance visibility on search engines.
+                </p>
+                <a class="btn" href="https://example.com/project6">
+                    Read More
+                </a>
+            </div>
+    </section>
+
+    <section class="Contact" id="Contact">
+        <h2>Contact<span>Me!</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+
+
+
+    
+    
+</body>
+
+</html>
