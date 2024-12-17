@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+   body {
+            font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #232526, #414345);
             color: white;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar {
@@ -17,25 +19,27 @@
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(145deg, #2c2f33, #3e4349);
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(255, 255, 255, 0.1);
             padding: 15px 30px;
-            border-radius: 12px;
+            border-radius: 16px;
             margin: 20px;
             position: relative;
+            
         }
 
         .navbar h1 {
-            font-size: 24px;
+            font-size: 29px;
             font-weight: bold;
         }
 
         .navbar h1 span {
-            color: #4caf50;
+            color: #ffffff;
+            text-shadow: 1px 1px 4px rgba(17, 20, 17, 0.7);
         }
 
         .navbar div {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         .navbar a {
@@ -43,22 +47,22 @@
             color: #ddd;
             font-size: 18px;
             font-weight: bold;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background: linear-gradient(145deg, #3e4349, #2c2f33);
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
         }
 
         .navbar a:hover {
-            transform: translateY(-4px);
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(255, 255, 255, 0.1);
             background: linear-gradient(145deg, #4caf50, #3e4349);
         }
 
         .navbar a:active {
-            transform: translateY(2px);
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+            transform: translateY(3px);
+            box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.6), inset -3px -3px 8px rgba(255, 255, 255, 0.1);
         }
 
         .menu-toggle {
@@ -107,10 +111,23 @@
             padding: 0 45px;
         }
 
-        .section1 img, .section2 img {
+        .section1 img{
             width: 30%;
             height: 600px;
+            margin-top: 3.5vh;
+            margin-left: 5vh;
+            border-radius: 16px;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(255, 255, 255, 0.1);
         }
+        .section2 img {
+            width: 30%;
+            height: 600px;
+            margin-left: 5vh;
+            border-radius: 16px;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(255, 255, 255, 0.1);
+
+        }
+        
 
         .section1part1, .section1part2 {
             width: 60%;
@@ -154,14 +171,80 @@
             background: linear-gradient(145deg, #4caf50, #3e4349);
         }
 
+
+
+
+
+
+        .section2 {
+            width: 100%;
+            display: flex;
+            height: 87vh;
+            padding: 0 45px;
+            margin-bottom: 10vh;
+
+        }
+
+        .section2 img {
+            margin-top: 16vh;
+            width: 30%;
+            height: 600px;
+            border-radius: 16px;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(255, 255, 255, 0.1);
+        }
+
+        .section1part2 {
+            margin-left: 10vw;
+            width: 60%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section1part2 h1 {
+            font-size: 30px;
+            margin-top: 250px;
+        }
+
+        .section1part2 h1 {
+            font-size: 60px;
+        }
+
+        .section1part2 h3 {
+            font-size: 30px;
+        }
+
+        .section1part2 p {
+            font-size: 17px;
+            margin-top: 20px;
+        }
+
+         .section1part2 button {
+            margin-top: 20px;
+            color: #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(145deg, #3e4349, #2c2f33);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+
+        .section1part2 button:hover {
+            transform: translateY(-4px);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #4caf50, #3e4349);
+        }
+
         .service {
             padding: 50px 0;
             text-align: center;
+            margin-bottom: 10vh;
         }
 
         .service .heading {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 50px;
+            margin-bottom: 50px;
         }
 
         .service .heading span {
@@ -213,12 +296,17 @@
         }
 
         .service-box .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(255, 255, 255, 0.1);
             background: linear-gradient(145deg, #4caf50, #3e4349);
         }
+        .portfolio{
+            padding: 50px 0;
+            text-align: center;
 
-        .contact, .portfolio {
+        }
+
+        .contact {
             padding: 50px 0;
             text-align: center;
         }
@@ -281,12 +369,15 @@
             box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.1);
             background: linear-gradient(145deg, #4caf50, #3e4349);
         }
-        #portfolio{
+
+        #portfolio {
             margin-top: 30px;
         }
-        #service2{
+
+        #service2 {
             margin-top: 30px;
         }
+
         .Contact {
             padding: 50px 20px;
             text-align: center;
@@ -338,20 +429,27 @@
         }
 
         .Contact .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #4caf50;
-            color: white;
+            text-decoration: none;
+            color: #ddd;
             font-size: 18px;
-            cursor: pointer;
-            transition: background 0.3s;
+            font-weight: bold;
+            padding: 12px 24px;
+            background: linear-gradient(145deg, #3e4349, #2c2f33);
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+        
+        .Contact .btn:hover{
+            transform: translateY(-6px);
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7), -6px -6px 12px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #4caf50, #3e4349);
+
         }
 
-        .Contact .btn:hover {
-            background: #45a049;
-        }
+        
 
+        
         @media (max-width: 768px) {
             .navbar div {
                 display: none;
@@ -376,19 +474,20 @@
                 width: 80%;
                 height: auto;
             }
-            .section2 img{
-                display: none;
 
-                
+            .section2 img {
+                display: none;
             }
 
             .section1part1, .section1part2 {
                 width: 100%;
                 margin: 0;
             }
-            .Abouth2{
+
+            .Abouth2 {
                 margin-top: 350px;
             }
+
             .Contact .input-box {
                 flex-direction: column;
             }
@@ -397,53 +496,53 @@
                 width: 100%;
                 margin-bottom: 10px;
             }
-            .heading{
-                margin-top: 250px;
+
+            .heading {
+                margin-top: 80px;
             }
-            .Abouth2{
-                margin-top: 450px;
-            }
-            
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <h1>Bakhtawar<span>Khan</span></h1>
+    <nav class="navbar" id="nav">
+        <h1>Bakhtawar Khan</h1>
         <div>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Services</a>
+            <a href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#Service">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#Contact">Contact</a>
+
+            
         </div>
         <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
-    <div class="section1">
+    <div class="section1" id="Home">
         <div class="section1part1">
             <h4>Hi, Myself</h4>
             <h1>Muhammad Bakhtawar</h1>
             <h3>I'm a <span>Backend Developer</span></h3>
             <p>I specialize in creating robust backend systems that are both scalable and efficient. With a strong foundation in programming, I thrive on solving complex problems and optimizing workflows to deliver seamless user experiences.</p>
-            <button>Download CV</button>
+            <button> <a href="#nav">Download CV</a></button>
         </div>
         <img src="MUHAMMAD BAKHTAWAR KHAN.png" alt="Portrait of Muhammad Bakhtawar, a backend developer, smiling and wearing a professional outfit.">
     </div>
-    <div class="section2">
+    <div class="section2" id="About">
         <img src="MUHAMMAD BAKHTAWAR KHAN.png" alt="Portrait of Muhammad Bakhtawar, a backend developer, smiling and wearing a professional outfit.">
         <div class="section1part2">
             <h1 class="Abouth2">About Me</h1>
             <h3>I'm a <span>Backend Developer</span></h3>
-            <p>I specialize in creating robust backend systems that are both scalable and efficient. With a strong foundation in programming, I thrive on solving complex problems and optimizing workflows to deliver seamless user experiences.</p>
-            <button>Read More</button>
+            <p>
+                I specialize in creating intuitive and dynamic frontend interfaces that are both responsive and visually engaging. With a strong foundation in modern web technologies, I thrive on translating complex designs into seamless user <br> experiences, ensuring efficiency, scalability, and accessibility across all devices.</p>
+            <button><a href="#nav">Read More</a></button>
         </div>
     </div>
-    <section class="service" id="service">
+    <section class="service" id="Service">
         <h2 class="heading">
             Our
-            <span>
+            
                 Services
-            </span>
+            
         </h2>
         <div class="service-container">
             <div class="service-box">
@@ -456,7 +555,7 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
                     officiis ipsa fugiat voluptates distinctio.
                 </p>
-                <a class="btn" href="">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
@@ -470,7 +569,7 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
                     officiis ipsa fugiat voluptates distinctio.
                 </p>
-                <a class="btn" href="">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
@@ -484,7 +583,7 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
                     officiis ipsa fugiat voluptates distinctio.
                 </p>
-                <a class="btn" href="">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
@@ -503,7 +602,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
                 officiis ipsa fugiat voluptates distinctio.
             </p>
-            <a class="btn" href="">
+            <a class="btn" href="#nav">
                 Read More
             </a>
         </div>
@@ -517,7 +616,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
                 officiis ipsa fugiat voluptates distinctio.
             </p>
-            <a class="btn" href="">
+            <a class="btn" href="#nav">
                 Read More
             </a>
         </div>
@@ -531,7 +630,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reprehenderit odit sed nemo vitae odio
                 officiis ipsa fugiat voluptates distinctio.
             </p>
-            <a class="btn" href="">
+            <a class="btn" href="#nav">
                 Read More
             </a>
         </div>
@@ -541,9 +640,9 @@
     <section class="portfolio" id="portfolio">
         <h2 class="heading">
             My
-            <span>
+           
                 Portfolio
-            </span>
+            
         </h2>
         <div class="portfolio-container">
             <div class="portfolio-box">
@@ -572,7 +671,7 @@
                 <p>
                     A vibrant and creative poster designed for an upcoming event. The poster reflects the theme and aesthetics of the event, ensuring it grabs attention and conveys the necessary information.
                 </p>
-                <a class="btn" href="https://example.com/project2">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
@@ -587,7 +686,7 @@
                 <p>
                     A detailed analytics dashboard showing the results of a digital marketing campaign. The campaign targeted key demographics to increase sales and brand awareness, and the dashboard presents key performance metrics.
                 </p>
-                <a class="btn" href="https://example.com/project3">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
@@ -604,7 +703,7 @@
                 <p>
                     A mobile app designed to help users track their fitness goals. The app includes features like step counting, workout logs, and health data tracking, all aimed at improving user engagement and health outcomes.
                 </p>
-                <a class="btn" href="https://example.com/project4">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
@@ -619,7 +718,7 @@
                 <p>
                     Development of an e-commerce platform designed to offer a smooth shopping experience. The platform features an intuitive interface, product filters, and a secure payment gateway for online transactions.
                 </p>
-                <a class="btn" href="https://example.com/project5">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
@@ -634,14 +733,14 @@
                 <p>
                     A project focused on improving the search engine rankings of a website. This included optimizing website content, improving page load times, and implementing backlink strategies to enhance visibility on search engines.
                 </p>
-                <a class="btn" href="https://example.com/project6">
+                <a class="btn" href="#nav">
                     Read More
                 </a>
             </div>
     </section>
 
     <section class="Contact" id="Contact">
-        <h2>Contact<span>Me!</span></h2>
+        <h2>Contact Me!</h2>
         <form action="#">
             <div class="input-box">
                 <input type="text" placeholder="Full Name">
@@ -655,8 +754,6 @@
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
-
-
 
 
     
